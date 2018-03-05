@@ -1,0 +1,67 @@
+package Bank;
+/**
+ * 
+ * @author u180301
+ * @version 1.0
+ * @since 05 Feb 2018
+ */
+public class BankAccount {
+/**
+ * Balance attribute
+ */
+    private static double balance;
+
+	//Constructors
+    
+    /**
+     * Set the bank account balance to 0
+     */
+	public BankAccount()
+	{
+		balance = 0;
+	}
+	
+	/**
+	 * Set bank account balance to initial balance
+	 * @param initialBalance Starting balance
+	 */
+	public BankAccount(double initialBalance)
+	{
+		balance = initialBalance;
+	}
+	
+	/**
+	 * Adding the deposit to the account balance
+	 * @param amount transaction amount
+	 */
+	public static void deposit(double amount)
+	   {      
+		balance = balance + amount;
+	       
+	    }
+	
+	/**
+	 * Withdrawing transaction amount from balance if there is enough money in the account
+	 * @param amount transaction amount 
+	 * @return boolean 
+	 */
+	public static boolean withdraw(double amount)    
+	{ 
+		if (balance>= amount)
+			{
+			balance = balance - amount;
+			return true;
+			}
+		else
+			return false;
+        
+    } 
+	/**
+	 * Return balance to the user
+	 * @return balance
+	 */
+	public double getBalance() 
+	{ 
+		return balance;
+	}
+}
